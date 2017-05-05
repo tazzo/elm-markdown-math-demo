@@ -7,7 +7,7 @@
 module Main exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (target)
+import Html.Attributes exposing (style)
 import Material
 import Material.Options as Options exposing (css)
 import Material.Layout as Layout
@@ -16,7 +16,6 @@ import Material.Card as Card
 import Material.Textfield as Textfield
 import Material.Options as Options
 import Material.Elevation as Elevation
-import Material.Button as Button
 import Material.Grid exposing (grid, cell, size, offset, Device(..))
 import MarkdownMath exposing (toHtml)
 
@@ -131,10 +130,25 @@ view model =
         , Layout.fixedDrawer
         ]
         { header = header model
-        , drawer = []
+        , drawer = drawer
         , tabs = ( [], [] )
         , main = [ viewBody model ]
         }
+
+
+drawer : List (Html Msg)
+drawer =
+    [ Layout.title [] [ text "Example drawer" ]
+    , Layout.navigation
+        []
+        [ Layout.link
+            [ Layout.href "https://github.com/tazzo/elm-markdown-math" ]
+            [ text "elm-markdown-math source" ]
+        , Layout.link
+            [ Layout.href "https://github.com/tazzo/elm-markdown-math-demo" ]
+            [ text "demo source" ]
+        ]
+    ]
 
 
 header : Model -> List (Html Msg)
@@ -142,26 +156,7 @@ header model =
     [ Layout.row
         [ css "transition" "height 333ms ease-in-out 0s"
         ]
-        [ Layout.title [] [ text "Elm Markdown Math - Demo" ]
-        , Layout.spacer
-        , Button.render Mdl
-            [ 0, 8 ]
-            model.mdl
-            [ Button.ripple
-            , Button.raised
-            , Button.link "https://github.com/tazzo/elm-markdown-math"
-            , Options.attribute <| Html.Attributes.target "_blank"
-            ]
-            [ text "elm-markdown-math source" ]
-        , Button.render Mdl
-            [ 0, 9 ]
-            model.mdl
-            [ Button.ripple
-            , Button.raised
-            , Button.link "https://github.com/tazzo/elm-markdown-math-demo"
-            , Options.attribute <| Html.Attributes.target "_blank"
-            ]
-            [ text "demo source" ]
+        [ Layout.title [] [ h3 [ style [ ( "padding", "2rem" ) ] ] [ text "Elm Markdown Math - Demo" ] ]
         ]
     ]
 
