@@ -156,7 +156,7 @@ header model =
     [ Layout.row
         [ css "transition" "height 333ms ease-in-out 0s"
         ]
-        [ Layout.title [] [ h3 [ style [ ( "padding", "2rem" ) ] ] [ text "Elm Markdown Math - Demo" ] ]
+        [ Layout.title [] [ text "Elm Markdown Math - Demo" ]
         ]
     ]
 

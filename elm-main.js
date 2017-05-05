@@ -15904,23 +15904,7 @@ var _user$project$Main$header = function (model) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$h3,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$style(
-									{
-										ctor: '::',
-										_0: {ctor: '_Tuple2', _0: 'padding', _1: '2rem'},
-										_1: {ctor: '[]'}
-									}),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('Elm Markdown Math - Demo'),
-								_1: {ctor: '[]'}
-							}),
+						_0: _elm_lang$html$Html$text('Elm Markdown Math - Demo'),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
