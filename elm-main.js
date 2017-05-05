@@ -15946,7 +15946,7 @@ var _user$project$Main$header = function (model) {
 								_0: 0,
 								_1: {
 									ctor: '::',
-									_0: 9,
+									_0: 8,
 									_1: {ctor: '[]'}
 								}
 							},
@@ -15959,7 +15959,7 @@ var _user$project$Main$header = function (model) {
 									_0: _debois$elm_mdl$Material_Button$raised,
 									_1: {
 										ctor: '::',
-										_0: _debois$elm_mdl$Material_Button$link('https://github.com/tazzo/elm-markdown-math-demo'),
+										_0: _debois$elm_mdl$Material_Button$link('https://github.com/tazzo/elm-markdown-math'),
 										_1: {
 											ctor: '::',
 											_0: _debois$elm_mdl$Material_Options$attribute(
@@ -15971,10 +15971,49 @@ var _user$project$Main$header = function (model) {
 							},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('Git Source'),
+								_0: _elm_lang$html$Html$text('elm-markdown-math source'),
 								_1: {ctor: '[]'}
 							}),
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: A5(
+								_debois$elm_mdl$Material_Button$render,
+								_user$project$Main$Mdl,
+								{
+									ctor: '::',
+									_0: 0,
+									_1: {
+										ctor: '::',
+										_0: 9,
+										_1: {ctor: '[]'}
+									}
+								},
+								model.mdl,
+								{
+									ctor: '::',
+									_0: _debois$elm_mdl$Material_Button$ripple,
+									_1: {
+										ctor: '::',
+										_0: _debois$elm_mdl$Material_Button$raised,
+										_1: {
+											ctor: '::',
+											_0: _debois$elm_mdl$Material_Button$link('https://github.com/tazzo/elm-markdown-math-demo'),
+											_1: {
+												ctor: '::',
+												_0: _debois$elm_mdl$Material_Options$attribute(
+													_elm_lang$html$Html_Attributes$target('_blank')),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('demo source'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}),

@@ -145,6 +145,15 @@ header model =
         [ Layout.title [] [ text "Elm Markdown Math - Demo" ]
         , Layout.spacer
         , Button.render Mdl
+            [ 0, 8 ]
+            model.mdl
+            [ Button.ripple
+            , Button.raised
+            , Button.link "https://github.com/tazzo/elm-markdown-math"
+            , Options.attribute <| Html.Attributes.target "_blank"
+            ]
+            [ text "elm-markdown-math source" ]
+        , Button.render Mdl
             [ 0, 9 ]
             model.mdl
             [ Button.ripple
@@ -152,7 +161,7 @@ header model =
             , Button.link "https://github.com/tazzo/elm-markdown-math-demo"
             , Options.attribute <| Html.Attributes.target "_blank"
             ]
-            [ text "Git Source" ]
+            [ text "demo source" ]
         ]
     ]
 
