@@ -15866,7 +15866,7 @@ var _user$project$Main$renderMessage = function (model) {
 				_0: A2(_debois$elm_mdl$Material_Options$css, 'max-width', '600px'),
 				_1: {
 					ctor: '::',
-					_0: _debois$elm_mdl$Material_Elevation$e16,
+					_0: _debois$elm_mdl$Material_Elevation$e8,
 					_1: {ctor: '[]'}
 				}
 			}
@@ -15887,32 +15887,7 @@ var _user$project$Main$renderMessage = function (model) {
 			_1: {ctor: '[]'}
 		});
 };
-var _user$project$Main$header = function (model) {
-	return {
-		ctor: '::',
-		_0: A2(
-			_debois$elm_mdl$Material_Layout$row,
-			{
-				ctor: '::',
-				_0: A2(_debois$elm_mdl$Material_Options$css, 'transition', 'height 333ms ease-in-out 0s'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_debois$elm_mdl$Material_Layout$title,
-					{ctor: '[]'},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('Markdown Math Demo'),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			}),
-		_1: {ctor: '[]'}
-	};
-};
-var _user$project$Main$initModel = {mdl: _debois$elm_mdl$Material$model, text: '## Markdown-Math rendering\n    Tex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$\n\nAn h1 header\n============\n\nParagraphs are separated by a blank line.\n\n2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists\nlook like:\n\n  * this one\n  * that one\n  * the other one\n\nNote that --- not considering the asterisk --- the actual text\ncontent starts at 4-columns in.\n\n'};
+var _user$project$Main$initModel = {mdl: _debois$elm_mdl$Material$model, text: '\nMarkdown Math\n============\n\nTex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$\n\nParagraphs are separated by a blank line.\n\n2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists\nlook like:\n\n  * this one\n  * that one\n  * the other one\n\n> Block quotes are\n> written like so.\n\nUnicode is supported. ☺\n\n\n\nAn h2 header\n------------\n\nHere\'s a numbered list:\n\n 1. first item\n 2. second item\n 3. third item\n\n```python\nimport time\n# Quick, count to ten!\nfor i in range(10):\n    # (but not *too* quick)\n    time.sleep(0.5)\n    print i\n```\n\n\n\n### An h3 header\n\nNow a nested list:\n\n 1. First, get these ingredients:\n\n      * carrots\n      * celery\n      * lentils\n\n 2. Boil some water.\n\n 3. Dump everything in the pot and follow\n    this algorithm:\n\n\nHere\'s a link to [a website](http://foo.bar), to a [local\ndoc](local-doc.html), and to a [section heading in the current\ndoc](#an-h2-header).\n\n![example image](logo-elm.png \"An exemplary image\")\n\nMath equations go in like so: $$\\omega = d\\phi / dt$$.\n\n'};
 var _user$project$Main$Model = F2(
 	function (a, b) {
 		return {mdl: a, text: b};
@@ -15938,6 +15913,74 @@ var _user$project$Main$update = F2(
 			};
 		}
 	});
+var _user$project$Main$header = function (model) {
+	return {
+		ctor: '::',
+		_0: A2(
+			_debois$elm_mdl$Material_Layout$row,
+			{
+				ctor: '::',
+				_0: A2(_debois$elm_mdl$Material_Options$css, 'transition', 'height 333ms ease-in-out 0s'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_debois$elm_mdl$Material_Layout$title,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Elm Markdown Math - Demo'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _debois$elm_mdl$Material_Layout$spacer,
+					_1: {
+						ctor: '::',
+						_0: A5(
+							_debois$elm_mdl$Material_Button$render,
+							_user$project$Main$Mdl,
+							{
+								ctor: '::',
+								_0: 0,
+								_1: {
+									ctor: '::',
+									_0: 9,
+									_1: {ctor: '[]'}
+								}
+							},
+							model.mdl,
+							{
+								ctor: '::',
+								_0: _debois$elm_mdl$Material_Button$ripple,
+								_1: {
+									ctor: '::',
+									_0: _debois$elm_mdl$Material_Button$raised,
+									_1: {
+										ctor: '::',
+										_0: _debois$elm_mdl$Material_Button$link('https://github.com/tazzo/elm-markdown-math-demo'),
+										_1: {
+											ctor: '::',
+											_0: _debois$elm_mdl$Material_Options$attribute(
+												_elm_lang$html$Html_Attributes$target('_blank')),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Git Source'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			}),
+		_1: {ctor: '[]'}
+	};
+};
 var _user$project$Main$tf = function (model) {
 	return A5(
 		_debois$elm_mdl$Material_Textfield$render,
@@ -15954,29 +15997,41 @@ var _user$project$Main$tf = function (model) {
 		model.mdl,
 		{
 			ctor: '::',
-			_0: _debois$elm_mdl$Material_Textfield$label('Multiline with 6 rows'),
+			_0: A2(_debois$elm_mdl$Material_Options$css, 'width', '100%'),
 			_1: {
 				ctor: '::',
-				_0: _debois$elm_mdl$Material_Textfield$floatingLabel,
+				_0: A2(_debois$elm_mdl$Material_Options$css, 'padding-left', '10px'),
 				_1: {
 					ctor: '::',
-					_0: _debois$elm_mdl$Material_Textfield$textarea,
+					_0: A2(_debois$elm_mdl$Material_Options$css, 'padding-right', '10px'),
 					_1: {
 						ctor: '::',
-						_0: _debois$elm_mdl$Material_Textfield$rows(6),
+						_0: _debois$elm_mdl$Material_Textfield$label('Enter Markdown and Math here'),
 						_1: {
 							ctor: '::',
-							_0: _debois$elm_mdl$Material_Textfield$value(model.text),
+							_0: _debois$elm_mdl$Material_Textfield$floatingLabel,
 							_1: {
 								ctor: '::',
-								_0: _debois$elm_mdl$Material_Options$onInput(_user$project$Main$InputChange),
+								_0: _debois$elm_mdl$Material_Textfield$textarea,
 								_1: {
 									ctor: '::',
-									_0: _debois$elm_mdl$Material_Color$background(_debois$elm_mdl$Material_Color$white),
+									_0: _debois$elm_mdl$Material_Textfield$rows(20),
 									_1: {
 										ctor: '::',
-										_0: _debois$elm_mdl$Material_Elevation$e4,
-										_1: {ctor: '[]'}
+										_0: _debois$elm_mdl$Material_Textfield$value(model.text),
+										_1: {
+											ctor: '::',
+											_0: _debois$elm_mdl$Material_Options$onInput(_user$project$Main$InputChange),
+											_1: {
+												ctor: '::',
+												_0: _debois$elm_mdl$Material_Color$background(_debois$elm_mdl$Material_Color$white),
+												_1: {
+													ctor: '::',
+													_0: _debois$elm_mdl$Material_Elevation$e8,
+													_1: {ctor: '[]'}
+												}
+											}
+										}
 									}
 								}
 							}
@@ -16002,7 +16057,7 @@ var _user$project$Main$viewBody = function (model) {
 				_debois$elm_mdl$Material_Grid$cell,
 				{
 					ctor: '::',
-					_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 8),
+					_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 6),
 					_1: {ctor: '[]'}
 				},
 				{
@@ -16016,7 +16071,7 @@ var _user$project$Main$viewBody = function (model) {
 					_debois$elm_mdl$Material_Grid$cell,
 					{
 						ctor: '::',
-						_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 8),
+						_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 6),
 						_1: {ctor: '[]'}
 					},
 					{
