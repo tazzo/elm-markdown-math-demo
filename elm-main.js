@@ -15919,7 +15919,7 @@ var _user$project$Main$drawer = {
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('Example drawer'),
+			_0: _elm_lang$html$Html$text('Github'),
 			_1: {ctor: '[]'}
 		}),
 	_1: {

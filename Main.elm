@@ -138,7 +138,7 @@ view model =
 
 drawer : List (Html Msg)
 drawer =
-    [ Layout.title [] [ text "Example drawer" ]
+    [ Layout.title [] [ text "Github" ]
     , Layout.navigation
         []
         [ Layout.link
