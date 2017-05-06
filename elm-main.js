@@ -16192,7 +16192,15 @@ var _user$project$Main$viewBody = function (model) {
 				{
 					ctor: '::',
 					_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 6),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$All, 2),
+						_1: {
+							ctor: '::',
+							_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Desktop, 1),
+							_1: {ctor: '[]'}
+						}
+					}
 				},
 				{
 					ctor: '::',
@@ -16206,7 +16214,15 @@ var _user$project$Main$viewBody = function (model) {
 					{
 						ctor: '::',
 						_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 6),
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$All, 1),
+							_1: {
+								ctor: '::',
+								_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Desktop, 2),
+								_1: {ctor: '[]'}
+							}
+						}
 					},
 					{
 						ctor: '::',

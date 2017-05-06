@@ -16,7 +16,7 @@ import Material.Options as Options
 import Material.Options as Options exposing (css)
 import Material.Elevation as Elevation
 import Material.Button as Button
-import Material.Grid exposing (grid, cell, size, offset, Device(..))
+import Material.Grid exposing (grid, cell, size, order, offset, Device(..))
 import MarkdownMath exposing (toHtml)
 
 
@@ -138,8 +138,8 @@ header model =
 viewBody : Model -> Html Msg
 viewBody model =
     grid [ Color.background (Color.color Color.Grey Color.S100) ]
-        [ cell [ size All 6 ] [ tf model ]
-        , cell [ size All 6 ] [ renderMessage model ]
+        [ cell [ size All 6, order All 2, order Desktop 1 ] [ tf model ]
+        , cell [ size All 6, order All 1, order Desktop 2 ] [ renderMessage model ]
         ]
 
 
