@@ -88,27 +88,41 @@ drawer model =
 
 
 examplesList model =
-    [ Layout.title [] [ text "Examples" ], button1 model, button2 model ]
+    [ Layout.title [] [ text "Examples" ]
+    , button1 model
+    , button2 model
+    , button3 model
+    ]
 
 
 button1 model =
     Button.render Mdl
-        [ 0 ]
+        [ 2, 1 ]
         model.mdl
         [ Button.ripple
         , Options.onClick <| InputChange example1
         ]
-        [ text "Flat button 1" ]
+        [ text "markdown Math" ]
 
 
 button2 model =
     Button.render Mdl
-        [ 0 ]
+        [ 2, 2 ]
         model.mdl
         [ Button.ripple
         , Options.onClick <| InputChange example2
         ]
-        [ text "Flat button 2" ]
+        [ text "Matrix" ]
+
+
+button3 model =
+    Button.render Mdl
+        [ 2, 3 ]
+        model.mdl
+        [ Button.ripple
+        , Options.onClick <| InputChange example3
+        ]
+        [ text "Case function" ]
 
 
 header : Model -> List (Html Msg)
@@ -265,4 +279,21 @@ $$
  \\end{pmatrix}
 
  $$
+"""
+
+
+example3 =
+    """
+### Case function
+
+
+$$
+ f(n) =
+  \\begin{cases}
+    n/2       & \\quad \\text{if } n \\text{ is even}\\\\
+    -(n+1)/2  & \\quad \\text{if } n \\text{ is odd}
+ \\end{cases}
+
+ $$
+
 """

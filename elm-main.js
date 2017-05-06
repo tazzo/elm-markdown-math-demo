@@ -15855,6 +15855,7 @@ var _user$project$MarkdownMath$Options = F4(
 		return {githubFlavored: a, defaultHighlighting: b, sanitize: c, smartypants: d};
 	});
 
+var _user$project$Main$example3 = '\n### Case function\n\n\n$$\n f(n) =\n  \\begin{cases}\n    n/2       & \\quad \\text{if } n \\text{ is even}\\\\\n    -(n+1)/2  & \\quad \\text{if } n \\text{ is odd}\n \\end{cases}\n\n $$\n\n';
 var _user$project$Main$example2 = '\n### Matrix example\n\n\n$$\n\n  A_{m,n} =\n \\begin{pmatrix}\n  a_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\n    a_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n  \\vdots  & \\vdots  & \\ddots & \\vdots  \\\\\n    a_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n \\end{pmatrix}\n\n $$\n';
 var _user$project$Main$example1 = '\nMarkdown Math\n============\n\nTex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$\n\nParagraphs are separated by a blank line.\n\n2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists\nlook like:\n\n  * this one\n  * that one\n  * the other one\n\n> Block quotes are\n> written like so.\n\nUnicode is supported. ☺\n\n\n\nAn h2 header\n------------\n\nHere\'s a numbered list:\n\n 1. first item\n 2. second item\n 3. third item\n\n```python\nimport time\n# Quick, count to ten!\nfor i in range(10):\n    # (but not *too* quick)\n    time.sleep(0.5)\n    print i\n```\n\n\n\n### An h3 header\n\nNow a nested list:\n\n 1. First, get these ingredients:\n\n      * carrots\n      * celery\n      * lentils\n\n 2. Boil some water.\n\n 3. Dump everything in the pot and follow\n    this algorithm:\n\n\nHere\'s a link to [a website](http://foo.bar), to a [local\ndoc](local-doc.html), and to a [section heading in the current\ndoc](#an-h2-header).\n\n![example image](logo-elm.png \"An exemplary image\")\n\nMath equations go in like so: $$\\omega = d\\phi / dt$$.\n\n';
 var _user$project$Main$renderMessage = function (model) {
@@ -15946,8 +15947,12 @@ var _user$project$Main$button1 = function (model) {
 		_user$project$Main$Mdl,
 		{
 			ctor: '::',
-			_0: 0,
-			_1: {ctor: '[]'}
+			_0: 2,
+			_1: {
+				ctor: '::',
+				_0: 1,
+				_1: {ctor: '[]'}
+			}
 		},
 		model.mdl,
 		{
@@ -15962,7 +15967,7 @@ var _user$project$Main$button1 = function (model) {
 		},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('Flat button 1'),
+			_0: _elm_lang$html$Html$text('markdown Math'),
 			_1: {ctor: '[]'}
 		});
 };
@@ -15972,8 +15977,12 @@ var _user$project$Main$button2 = function (model) {
 		_user$project$Main$Mdl,
 		{
 			ctor: '::',
-			_0: 0,
-			_1: {ctor: '[]'}
+			_0: 2,
+			_1: {
+				ctor: '::',
+				_0: 2,
+				_1: {ctor: '[]'}
+			}
 		},
 		model.mdl,
 		{
@@ -15988,7 +15997,37 @@ var _user$project$Main$button2 = function (model) {
 		},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('Flat button 2'),
+			_0: _elm_lang$html$Html$text('Matrix'),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$button3 = function (model) {
+	return A5(
+		_debois$elm_mdl$Material_Button$render,
+		_user$project$Main$Mdl,
+		{
+			ctor: '::',
+			_0: 2,
+			_1: {
+				ctor: '::',
+				_0: 3,
+				_1: {ctor: '[]'}
+			}
+		},
+		model.mdl,
+		{
+			ctor: '::',
+			_0: _debois$elm_mdl$Material_Button$ripple,
+			_1: {
+				ctor: '::',
+				_0: _debois$elm_mdl$Material_Options$onClick(
+					_user$project$Main$InputChange(_user$project$Main$example3)),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text('Case function'),
 			_1: {ctor: '[]'}
 		});
 };
@@ -16009,7 +16048,11 @@ var _user$project$Main$examplesList = function (model) {
 			_1: {
 				ctor: '::',
 				_0: _user$project$Main$button2(model),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: _user$project$Main$button3(model),
+					_1: {ctor: '[]'}
+				}
 			}
 		}
 	};
