@@ -79,10 +79,10 @@ drawer model =
         [ Layout.title [] [ text "Github" ]
         , Layout.link
             [ Layout.href "https://github.com/tazzo/elm-markdown-math" ]
-            [ text "elm-markdown-math source" ]
+            [ text "elm-markdown-math" ]
         , Layout.link
             [ Layout.href "https://github.com/tazzo/elm-markdown-math-demo" ]
-            [ text "demo source" ]
+            [ text "demo" ]
         ]
     ]
 
@@ -102,7 +102,7 @@ button1 model =
         [ Button.ripple
         , Options.onClick <| InputChange example1
         ]
-        [ text "markdown Math" ]
+        [ text "Markdown Math" ]
 
 
 button2 model =
@@ -122,7 +122,7 @@ button3 model =
         [ Button.ripple
         , Options.onClick <| InputChange example3
         ]
-        [ text "Case function" ]
+        [ text "Math" ]
 
 
 header : Model -> List (Html Msg)
@@ -195,10 +195,14 @@ main =
 
 example1 =
     """
-Markdown Math
-============
+### Markdown Math
 
 Tex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$
+
+#### limit
+$$
+\\displaystyle\\lim_{x \\to \\infty} e^{-x} = 0
+ $$
 
 Paragraphs are separated by a blank line.
 
@@ -265,7 +269,17 @@ Math equations go in like so: $$\\omega = d\\phi / dt$$.
 
 example2 =
     """
-### Matrix example
+#### Simple matrix
+
+$$
+\\begin{matrix}
+  a & b & c \\\\
+  d & e & f \\\\
+  g & h & i
+ \\end{matrix}
+$$
+
+#### Matrix with dots
 
 
 $$
@@ -279,12 +293,27 @@ $$
  \\end{pmatrix}
 
  $$
+
+#### Matrix with square brakets
+
+$$
+M = \\begin{bmatrix}
+       \\frac{5}{6} & \\frac{1}{6} & 0           \\\\[0.3em]
+       \\frac{5}{6} & 0           & \\frac{1}{6} \\\\[0.3em]
+       0           & \\frac{5}{6} & \\frac{1}{6}
+     \\end{bmatrix}
+ $$
+
 """
 
 
 example3 =
     """
-### Case function
+#### Simple function
+
+$$f(n) = n^5 + 4n^2 + 2 |_{n=17}$$
+
+#### Case function
 
 
 $$
@@ -295,5 +324,10 @@ $$
  \\end{cases}
 
  $$
+
+#### Integral
+$$
+\\int_0^\\infty \\mathrm{e}^{-x}\\,\\mathrm{d}x
+$$
 
 """
