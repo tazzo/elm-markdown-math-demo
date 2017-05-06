@@ -7,15 +7,15 @@
 module Main exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (style)
 import Material
-import Material.Options as Options exposing (css)
 import Material.Layout as Layout
 import Material.Color as Color
 import Material.Card as Card
 import Material.Textfield as Textfield
 import Material.Options as Options
+import Material.Options as Options exposing (css)
 import Material.Elevation as Elevation
+import Material.Button as Button
 import Material.Grid exposing (grid, cell, size, offset, Device(..))
 import MarkdownMath exposing (toHtml)
 
@@ -31,74 +31,7 @@ initModel : Model
 initModel =
     { mdl =
         Material.model
-    , text =
-        """
-Markdown Math
-============
-
-Tex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$
-
-Paragraphs are separated by a blank line.
-
-2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
-look like:
-
-  * this one
-  * that one
-  * the other one
-
-> Block quotes are
-> written like so.
-
-Unicode is supported. ☺
-
-
-
-An h2 header
-------------
-
-Here's a numbered list:
-
- 1. first item
- 2. second item
- 3. third item
-
-```python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
-```
-
-
-
-### An h3 header
-
-Now a nested list:
-
- 1. First, get these ingredients:
-
-      * carrots
-      * celery
-      * lentils
-
- 2. Boil some water.
-
- 3. Dump everything in the pot and follow
-    this algorithm:
-
-
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header).
-
-![example image](logo-elm.png "An exemplary image")
-
-Math equations go in like so: $$\\omega = d\\phi / dt$$.
-
-"""
+    , text = example1
     }
 
 
@@ -130,18 +63,21 @@ view model =
         , Layout.fixedDrawer
         ]
         { header = header model
-        , drawer = drawer
+        , drawer = drawer model
         , tabs = ( [], [] )
         , main = [ viewBody model ]
         }
 
 
-drawer : List (Html Msg)
-drawer =
-    [ Layout.title [] [ text "Github" ]
+drawer : Model -> List (Html Msg)
+drawer model =
+    [ Layout.navigation
+        []
+        (examplesList model)
     , Layout.navigation
         []
-        [ Layout.link
+        [ Layout.title [] [ text "Github" ]
+        , Layout.link
             [ Layout.href "https://github.com/tazzo/elm-markdown-math" ]
             [ text "elm-markdown-math source" ]
         , Layout.link
@@ -149,6 +85,30 @@ drawer =
             [ text "demo source" ]
         ]
     ]
+
+
+examplesList model =
+    [ Layout.title [] [ text "Examples" ], button1 model, button2 model ]
+
+
+button1 model =
+    Button.render Mdl
+        [ 0 ]
+        model.mdl
+        [ Button.ripple
+        , Options.onClick <| InputChange example1
+        ]
+        [ text "Flat button 1" ]
+
+
+button2 model =
+    Button.render Mdl
+        [ 0 ]
+        model.mdl
+        [ Button.ripple
+        , Options.onClick <| InputChange example2
+        ]
+        [ text "Flat button 2" ]
 
 
 header : Model -> List (Html Msg)
@@ -217,3 +177,92 @@ main =
         , subscriptions = subscriptions
         , update = update
         }
+
+
+example1 =
+    """
+Markdown Math
+============
+
+Tex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$
+
+Paragraphs are separated by a blank line.
+
+2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
+look like:
+
+  * this one
+  * that one
+  * the other one
+
+> Block quotes are
+> written like so.
+
+Unicode is supported. ☺
+
+
+
+An h2 header
+------------
+
+Here's a numbered list:
+
+ 1. first item
+ 2. second item
+ 3. third item
+
+```python
+import time
+# Quick, count to ten!
+for i in range(10):
+    # (but not *too* quick)
+    time.sleep(0.5)
+    print i
+```
+
+
+
+### An h3 header
+
+Now a nested list:
+
+ 1. First, get these ingredients:
+
+      * carrots
+      * celery
+      * lentils
+
+ 2. Boil some water.
+
+ 3. Dump everything in the pot and follow
+    this algorithm:
+
+
+Here's a link to [a website](http://foo.bar), to a [local
+doc](local-doc.html), and to a [section heading in the current
+doc](#an-h2-header).
+
+![example image](logo-elm.png "An exemplary image")
+
+Math equations go in like so: $$\\omega = d\\phi / dt$$.
+
+"""
+
+
+example2 =
+    """
+### Matrix example
+
+
+$$
+
+  A_{m,n} =
+ \\begin{pmatrix}
+  a_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\
+    a_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\
+  \\vdots  & \\vdots  & \\ddots & \\vdots  \\\\
+    a_{m,1} & a_{m,2} & \\cdots & a_{m,n}
+ \\end{pmatrix}
+
+ $$
+"""

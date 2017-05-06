@@ -15855,6 +15855,8 @@ var _user$project$MarkdownMath$Options = F4(
 		return {githubFlavored: a, defaultHighlighting: b, sanitize: c, smartypants: d};
 	});
 
+var _user$project$Main$example2 = '\n### Matrix example\n\n\n$$\n\n  A_{m,n} =\n \\begin{pmatrix}\n  a_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\n    a_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n  \\vdots  & \\vdots  & \\ddots & \\vdots  \\\\\n    a_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n \\end{pmatrix}\n\n $$\n';
+var _user$project$Main$example1 = '\nMarkdown Math\n============\n\nTex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$\n\nParagraphs are separated by a blank line.\n\n2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists\nlook like:\n\n  * this one\n  * that one\n  * the other one\n\n> Block quotes are\n> written like so.\n\nUnicode is supported. ☺\n\n\n\nAn h2 header\n------------\n\nHere\'s a numbered list:\n\n 1. first item\n 2. second item\n 3. third item\n\n```python\nimport time\n# Quick, count to ten!\nfor i in range(10):\n    # (but not *too* quick)\n    time.sleep(0.5)\n    print i\n```\n\n\n\n### An h3 header\n\nNow a nested list:\n\n 1. First, get these ingredients:\n\n      * carrots\n      * celery\n      * lentils\n\n 2. Boil some water.\n\n 3. Dump everything in the pot and follow\n    this algorithm:\n\n\nHere\'s a link to [a website](http://foo.bar), to a [local\ndoc](local-doc.html), and to a [section heading in the current\ndoc](#an-h2-header).\n\n![example image](logo-elm.png \"An exemplary image\")\n\nMath equations go in like so: $$\\omega = d\\phi / dt$$.\n\n';
 var _user$project$Main$renderMessage = function (model) {
 	return A2(
 		_debois$elm_mdl$Material_Card$view,
@@ -15912,56 +15914,7 @@ var _user$project$Main$header = function (model) {
 		_1: {ctor: '[]'}
 	};
 };
-var _user$project$Main$drawer = {
-	ctor: '::',
-	_0: A2(
-		_debois$elm_mdl$Material_Layout$title,
-		{ctor: '[]'},
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html$text('Github'),
-			_1: {ctor: '[]'}
-		}),
-	_1: {
-		ctor: '::',
-		_0: A2(
-			_debois$elm_mdl$Material_Layout$navigation,
-			{ctor: '[]'},
-			{
-				ctor: '::',
-				_0: A2(
-					_debois$elm_mdl$Material_Layout$link,
-					{
-						ctor: '::',
-						_0: _debois$elm_mdl$Material_Layout$href('https://github.com/tazzo/elm-markdown-math'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('elm-markdown-math source'),
-						_1: {ctor: '[]'}
-					}),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_debois$elm_mdl$Material_Layout$link,
-						{
-							ctor: '::',
-							_0: _debois$elm_mdl$Material_Layout$href('https://github.com/tazzo/elm-markdown-math-demo'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('demo source'),
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}
-			}),
-		_1: {ctor: '[]'}
-	}
-};
-var _user$project$Main$initModel = {mdl: _debois$elm_mdl$Material$model, text: '\nMarkdown Math\n============\n\nTex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$\n\nParagraphs are separated by a blank line.\n\n2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists\nlook like:\n\n  * this one\n  * that one\n  * the other one\n\n> Block quotes are\n> written like so.\n\nUnicode is supported. ☺\n\n\n\nAn h2 header\n------------\n\nHere\'s a numbered list:\n\n 1. first item\n 2. second item\n 3. third item\n\n```python\nimport time\n# Quick, count to ten!\nfor i in range(10):\n    # (but not *too* quick)\n    time.sleep(0.5)\n    print i\n```\n\n\n\n### An h3 header\n\nNow a nested list:\n\n 1. First, get these ingredients:\n\n      * carrots\n      * celery\n      * lentils\n\n 2. Boil some water.\n\n 3. Dump everything in the pot and follow\n    this algorithm:\n\n\nHere\'s a link to [a website](http://foo.bar), to a [local\ndoc](local-doc.html), and to a [section heading in the current\ndoc](#an-h2-header).\n\n![example image](logo-elm.png \"An exemplary image\")\n\nMath equations go in like so: $$\\omega = d\\phi / dt$$.\n\n'};
+var _user$project$Main$initModel = {mdl: _debois$elm_mdl$Material$model, text: _user$project$Main$example1};
 var _user$project$Main$Model = F2(
 	function (a, b) {
 		return {mdl: a, text: b};
@@ -15987,6 +15940,138 @@ var _user$project$Main$update = F2(
 			};
 		}
 	});
+var _user$project$Main$button1 = function (model) {
+	return A5(
+		_debois$elm_mdl$Material_Button$render,
+		_user$project$Main$Mdl,
+		{
+			ctor: '::',
+			_0: 0,
+			_1: {ctor: '[]'}
+		},
+		model.mdl,
+		{
+			ctor: '::',
+			_0: _debois$elm_mdl$Material_Button$ripple,
+			_1: {
+				ctor: '::',
+				_0: _debois$elm_mdl$Material_Options$onClick(
+					_user$project$Main$InputChange(_user$project$Main$example1)),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text('Flat button 1'),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$button2 = function (model) {
+	return A5(
+		_debois$elm_mdl$Material_Button$render,
+		_user$project$Main$Mdl,
+		{
+			ctor: '::',
+			_0: 0,
+			_1: {ctor: '[]'}
+		},
+		model.mdl,
+		{
+			ctor: '::',
+			_0: _debois$elm_mdl$Material_Button$ripple,
+			_1: {
+				ctor: '::',
+				_0: _debois$elm_mdl$Material_Options$onClick(
+					_user$project$Main$InputChange(_user$project$Main$example2)),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text('Flat button 2'),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$examplesList = function (model) {
+	return {
+		ctor: '::',
+		_0: A2(
+			_debois$elm_mdl$Material_Layout$title,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Examples'),
+				_1: {ctor: '[]'}
+			}),
+		_1: {
+			ctor: '::',
+			_0: _user$project$Main$button1(model),
+			_1: {
+				ctor: '::',
+				_0: _user$project$Main$button2(model),
+				_1: {ctor: '[]'}
+			}
+		}
+	};
+};
+var _user$project$Main$drawer = function (model) {
+	return {
+		ctor: '::',
+		_0: A2(
+			_debois$elm_mdl$Material_Layout$navigation,
+			{ctor: '[]'},
+			_user$project$Main$examplesList(model)),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_debois$elm_mdl$Material_Layout$navigation,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: A2(
+						_debois$elm_mdl$Material_Layout$title,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('Github'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_debois$elm_mdl$Material_Layout$link,
+							{
+								ctor: '::',
+								_0: _debois$elm_mdl$Material_Layout$href('https://github.com/tazzo/elm-markdown-math'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('elm-markdown-math source'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_debois$elm_mdl$Material_Layout$link,
+								{
+									ctor: '::',
+									_0: _debois$elm_mdl$Material_Layout$href('https://github.com/tazzo/elm-markdown-math-demo'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('demo source'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		}
+	};
+};
 var _user$project$Main$tf = function (model) {
 	return A5(
 		_debois$elm_mdl$Material_Textfield$render,
@@ -16105,7 +16190,7 @@ var _user$project$Main$view = function (model) {
 		},
 		{
 			header: _user$project$Main$header(model),
-			drawer: _user$project$Main$drawer,
+			drawer: _user$project$Main$drawer(model),
 			tabs: {
 				ctor: '_Tuple2',
 				_0: {ctor: '[]'},
