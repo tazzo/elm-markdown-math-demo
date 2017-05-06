@@ -138,8 +138,22 @@ header model =
 viewBody : Model -> Html Msg
 viewBody model =
     grid [ Color.background (Color.color Color.Grey Color.S100) ]
-        [ cell [ size All 6, order All 2, order Desktop 1 ] [ tf model ]
-        , cell [ size All 6, order All 1, order Desktop 2 ] [ renderMessage model ]
+        [ cell
+            [ size All 6
+
+            -- , order Phone 2
+            -- , order Tablet 2
+            -- , order Desktop 1
+            ]
+            [ tf model ]
+        , cell
+            [ size All 6
+
+            -- , order Phone 1
+            -- , order Tablet 1
+            -- , order Desktop 2
+            ]
+            [ renderMessage model ]
         ]
 
 
