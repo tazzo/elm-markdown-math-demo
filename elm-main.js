@@ -15866,12 +15866,8 @@ var _user$project$Main$renderMessage = function (model) {
 			_0: A2(_debois$elm_mdl$Material_Options$css, 'width', '100%'),
 			_1: {
 				ctor: '::',
-				_0: A2(_debois$elm_mdl$Material_Options$css, 'max-width', '600px'),
-				_1: {
-					ctor: '::',
-					_0: _debois$elm_mdl$Material_Elevation$e8,
-					_1: {ctor: '[]'}
-				}
+				_0: _debois$elm_mdl$Material_Elevation$e8,
+				_1: {ctor: '[]'}
 			}
 		},
 		{
@@ -16191,8 +16187,28 @@ var _user$project$Main$viewBody = function (model) {
 				_debois$elm_mdl$Material_Grid$cell,
 				{
 					ctor: '::',
-					_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 6),
-					_1: {ctor: '[]'}
+					_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 8),
+					_1: {
+						ctor: '::',
+						_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$Desktop, 6),
+						_1: {
+							ctor: '::',
+							_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Phone, 2),
+							_1: {
+								ctor: '::',
+								_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Tablet, 2),
+								_1: {
+									ctor: '::',
+									_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Desktop, 1),
+									_1: {
+										ctor: '::',
+										_0: _debois$elm_mdl$Material_Grid$stretch,
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
 				},
 				{
 					ctor: '::',
@@ -16205,8 +16221,24 @@ var _user$project$Main$viewBody = function (model) {
 					_debois$elm_mdl$Material_Grid$cell,
 					{
 						ctor: '::',
-						_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 6),
-						_1: {ctor: '[]'}
+						_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$All, 8),
+						_1: {
+							ctor: '::',
+							_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$Desktop, 6),
+							_1: {
+								ctor: '::',
+								_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Phone, 1),
+								_1: {
+									ctor: '::',
+									_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Tablet, 1),
+									_1: {
+										ctor: '::',
+										_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Desktop, 2),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
 					},
 					{
 						ctor: '::',

@@ -16,7 +16,7 @@ import Material.Options as Options
 import Material.Options as Options exposing (css)
 import Material.Elevation as Elevation
 import Material.Button as Button
-import Material.Grid exposing (grid, cell, size, order, offset, Device(..))
+import Material.Grid exposing (stretch, grid, cell, size, order, offset, Device(..))
 import MarkdownMath exposing (toHtml)
 
 
@@ -139,19 +139,20 @@ viewBody : Model -> Html Msg
 viewBody model =
     grid [ Color.background (Color.color Color.Grey Color.S100) ]
         [ cell
-            [ size All 6
-
-            -- , order Phone 2
-            -- , order Tablet 2
-            -- , order Desktop 1
+            [ size All 8
+            , size Desktop 6
+            , order Phone 2
+            , order Tablet 2
+            , order Desktop 1
+            , stretch
             ]
             [ tf model ]
         , cell
-            [ size All 6
-
-            -- , order Phone 1
-            -- , order Tablet 1
-            -- , order Desktop 2
+            [ size All 8
+            , size Desktop 6
+            , order Phone 1
+            , order Tablet 1
+            , order Desktop 2
             ]
             [ renderMessage model ]
         ]
@@ -181,7 +182,6 @@ renderMessage : Model -> Html Msg
 renderMessage model =
     Card.view
         [ css "width" "100%"
-        , css "max-width" "600px"
         , Elevation.e8
 
         -- ,Color.background (Color.color Color.Amber Color.S600)
