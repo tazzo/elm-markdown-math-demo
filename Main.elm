@@ -211,7 +211,15 @@ example1 =
     """
 ### Markdown Math
 
-Tex maht style $$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$
+Tex math **scriptscriptstyle** $$\\scriptscriptstyle \\int_{0}^{\\inf} e^{-x} dx$$
+
+Tex math **scriptstyle** $$\\scriptstyle \\int_{0}^{\\inf} e^{-x} dx$$
+
+Tex math **textstyle (default)** $$ \\int_{0}^{\\inf} e^{-x} dx$$
+
+Tex math **textstyle** $$\\textstyle \\int_{0}^{\\inf} e^{-x} dx$$
+
+Tex math **displaystyle** $$\\displaystyle \\int_{0}^{\\inf} e^{-x} dx$$
 
 #### limit
 $$
