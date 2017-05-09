@@ -16193,26 +16193,14 @@ var _user$project$Main$viewBody = function (model) {
 						_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$Desktop, 6),
 						_1: {
 							ctor: '::',
-							_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Phone, 2),
-							_1: {
-								ctor: '::',
-								_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Tablet, 2),
-								_1: {
-									ctor: '::',
-									_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Desktop, 1),
-									_1: {
-										ctor: '::',
-										_0: _debois$elm_mdl$Material_Grid$stretch,
-										_1: {ctor: '[]'}
-									}
-								}
-							}
+							_0: _debois$elm_mdl$Material_Grid$stretch,
+							_1: {ctor: '[]'}
 						}
 					}
 				},
 				{
 					ctor: '::',
-					_0: _user$project$Main$tf(model),
+					_0: _user$project$Main$renderMessage(model),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
@@ -16227,22 +16215,14 @@ var _user$project$Main$viewBody = function (model) {
 							_0: A2(_debois$elm_mdl$Material_Grid$size, _debois$elm_mdl$Material_Grid$Desktop, 6),
 							_1: {
 								ctor: '::',
-								_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Phone, 1),
-								_1: {
-									ctor: '::',
-									_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Tablet, 1),
-									_1: {
-										ctor: '::',
-										_0: A2(_debois$elm_mdl$Material_Grid$order, _debois$elm_mdl$Material_Grid$Desktop, 2),
-										_1: {ctor: '[]'}
-									}
-								}
+								_0: _debois$elm_mdl$Material_Grid$stretch,
+								_1: {ctor: '[]'}
 							}
 						}
 					},
 					{
 						ctor: '::',
-						_0: _user$project$Main$renderMessage(model),
+						_0: _user$project$Main$tf(model),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}

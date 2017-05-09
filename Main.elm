@@ -141,20 +141,15 @@ viewBody model =
         [ cell
             [ size All 8
             , size Desktop 6
-            , order Phone 2
-            , order Tablet 2
-            , order Desktop 1
             , stretch
             ]
-            [ tf model ]
+            [ renderMessage model ]
         , cell
             [ size All 8
             , size Desktop 6
-            , order Phone 1
-            , order Tablet 1
-            , order Desktop 2
+            , stretch
             ]
-            [ renderMessage model ]
+            [ tf model ]
         ]
 
 
