@@ -15,8 +15,7 @@ import MarkdownMath exposing (toHtml)
 
 
 type alias Model =
-    { mdl :
-        Material.Model
+    { mdl : Mdl
     , text : String
     }
 
