@@ -15634,32 +15634,10 @@ var _debois$elm_mdl$Material_Grid$Bottom = {ctor: 'Bottom'};
 var _debois$elm_mdl$Material_Grid$Middle = {ctor: 'Middle'};
 var _debois$elm_mdl$Material_Grid$Top = {ctor: 'Top'};
 
-var _user$project$Native_MarkdownMath = function() {
+var _tazzo$elm_markdown_math$Native_MarkdownMath = function() {
 
 
 // VIRTUAL-DOM WIDGETS
-
-function change(){
-
-    var number = 0;
-		var maths = {}
-
-    var replacer = function(match,p1) {
-        number++;
-        maths[number.toString()] = p1;
-        return "$$" + number + "$$";
-    };
-
-    var replacerMath = function() {
-        number++;
-        return ">>>" + maths[number.toString()] + "<<<";
-    };
-
-    title.innerHTML = string.replace(/\$\$+([\s\S]+?)\$\$+/g, replacer);
-    number = 0;
-    title2.innerHTML = string.replace(/\$\$+([\s\S]+?)\$\$+/g, replacerMath);
-
-}
 
 function toHtml(options, factList, rawMarkdown)
 {
@@ -15681,30 +15659,34 @@ function render_(model){
   var number = 0;
 	var maths = {}
 
-  var replacer = function(match,p1) {
+  var stripMath = function(match,p1) {
       number++;
       maths[number.toString()] = p1;
       return "$$" + number + "$$";
   };
 
-  var replacerMath = function() {
+  var replaceMath = function() {
       number++;
       return renderToString(maths[number.toString()] );
   };
+
+  //math code regex
+  var regex = /\$\$+([\s\S]+?)\$\$+/g;
+
   //strip math
-  var string = model.markdown.replace(/\$\$+([\s\S]+?)\$\$+/g, replacer);
+  var strip = model.markdown.replace(regex, stripMath);
   //do Markdown
 
-	var html = marked(string, formatOptions(model.options));
-  //do / re-replace math
+	var html = marked(strip, formatOptions(model.options));
+  //replace math
   number = 0;
-  return html.replace(/\$\$+([\s\S]+?)\$\$+/g, replacerMath);
+  return html.replace(regex, replaceMath);
 
 }
 
 function renderToString( expression) {
   var options={};
-  options.displayMode = false; 
+  options.displayMode = false;
   options.errorColor = "#cc0000";
   options.throwOnError = false;
   try {
@@ -15838,19 +15820,19 @@ return {
 
 }();
 
-var _user$project$MarkdownMath$toHtmlWith = _user$project$Native_MarkdownMath.toHtml;
-var _user$project$MarkdownMath$defaultOptions = {
+var _tazzo$elm_markdown_math$MarkdownMath$toHtmlWith = _tazzo$elm_markdown_math$Native_MarkdownMath.toHtml;
+var _tazzo$elm_markdown_math$MarkdownMath$defaultOptions = {
 	githubFlavored: _elm_lang$core$Maybe$Just(
 		{tables: false, breaks: false}),
 	defaultHighlighting: _elm_lang$core$Maybe$Nothing,
 	sanitize: false,
 	smartypants: false
 };
-var _user$project$MarkdownMath$toHtml = F2(
+var _tazzo$elm_markdown_math$MarkdownMath$toHtml = F2(
 	function (attrs, string) {
-		return A3(_user$project$Native_MarkdownMath.toHtml, _user$project$MarkdownMath$defaultOptions, attrs, string);
+		return A3(_tazzo$elm_markdown_math$Native_MarkdownMath.toHtml, _tazzo$elm_markdown_math$MarkdownMath$defaultOptions, attrs, string);
 	});
-var _user$project$MarkdownMath$Options = F4(
+var _tazzo$elm_markdown_math$MarkdownMath$Options = F4(
 	function (a, b, c, d) {
 		return {githubFlavored: a, defaultHighlighting: b, sanitize: c, smartypants: d};
 	});
@@ -15878,7 +15860,7 @@ var _user$project$Main$renderMessage = function (model) {
 				{
 					ctor: '::',
 					_0: A2(
-						_user$project$MarkdownMath$toHtml,
+						_tazzo$elm_markdown_math$MarkdownMath$toHtml,
 						{ctor: '[]'},
 						model.text),
 					_1: {ctor: '[]'}
