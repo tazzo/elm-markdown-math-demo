@@ -1,6 +1,6 @@
 {
-  "short_name": "PWA",
-  "name": "First PWA",
+  "short_name": "MarkdownMath",
+  "name": "Elm Markdown Math Demo",
   "icons": [
     {
       "src": "static/logo-1x.png",
