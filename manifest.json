@@ -1,0 +1,22 @@
+{
+  "short_name": "PWA",
+  "name": "First PWA",
+  "icons": [
+    {
+      "src": "logo-1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "logo-2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "logo-4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html"
+}
