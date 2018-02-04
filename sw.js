@@ -7,9 +7,9 @@ if (workbox) {
 }
 
 workbox.precaching.precacheAndRoute([
-    '/index.html',
-    '/elm-main.js',
-    '/dist/*.png',
+    'index.html',
+    'elm-main.js',
+    'dist/*.png',
 ]);
 
 workbox.routing.registerRoute(
