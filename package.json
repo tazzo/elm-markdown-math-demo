@@ -1,0 +1,33 @@
+{
+  "name": "elm-markdown-math-demo",
+  "version": "1.0.0",
+  "description": "Elm Markdown Math Demo PWA",
+  "main": "index.html",
+
+  "scripts": {
+
+    "build":"elm-make Main.elm --output=elm-main.js && workbox generate:sw",
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tazzo/elm-markdown-math-demo.git"
+  },
+  "keywords": [
+    "Elm",
+    "Markdown",
+    "Katex",
+    "PWA"
+  ],
+  "dependencies": {
+    "workbox-cli": "^2.1.2"
+  },
+  "author": "Roberto Tazzoli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tazzo/elm-markdown-math-demo/issues"
+  },
+  "homepage": "https://github.com/tazzo/elm-markdown-math-demo#readme"
+}
