@@ -210,7 +210,7 @@ Tex math **textstyle** $$\\textstyle \\int_{0}^{\\infty} e^{-x} dx$$
 Tex math **displaystyle** $$\\displaystyle \\int_{0}^{\\infty} e^{-x} dx$$
 
 
-###math  with color
+#### math  with color
 $$
  \\color{red}{
 x^2-3 \\over x+1 }+123
