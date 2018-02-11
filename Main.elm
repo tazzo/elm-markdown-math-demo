@@ -209,6 +209,14 @@ Tex math **textstyle** $$\\textstyle \\int_{0}^{\\infty} e^{-x} dx$$
 
 Tex math **displaystyle** $$\\displaystyle \\int_{0}^{\\infty} e^{-x} dx$$
 
+
+math  with color
+$$
+ \\color{red}{
+x^2-2 \\over x+1 }+123
+
+ $$
+
 #### limit
 $$
 \\displaystyle\\lim_{x \\to \\infty} e^{-x} = 0
