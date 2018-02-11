@@ -8,7 +8,10 @@ if (workbox) {
 
 workbox.precaching.precacheAndRoute([
     'index.html',
-    'elm-main.js',
+    {
+    url: 'elm-main.js',
+    revision: 'ass46',
+    } ,
     'dist/*.png',
 ]);
 
